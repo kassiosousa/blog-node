@@ -18,15 +18,13 @@ module.exports = {
     const { nome, email, senha } = req.body;
 
     try {
-      const usuario = new Usuario({
-        nome,
-        email
-      });
+      const usuario = new Usuario({nome, email});
 
       await usuario.adicionaSenha(senha);
 
       await usuario.adiciona();
-
+      
+      // Usuario criado com sucesso
       res.status(201).json();
     } catch (erro) {
       if (erro instanceof InvalidArgumentError) {

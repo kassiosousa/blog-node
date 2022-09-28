@@ -1,9 +1,8 @@
 const { InvalidArgumentError } = require('./erros');
 
-
 module.exports = {
   campoStringNaoNulo: (valor, nome) => {
-    if (typeof valor !== 'string' || valor === 0)
+    if (typeof valor !== 'string' || valor === 0 || valor === "")
       throw new InvalidArgumentError(`É necessário preencher o campo ${nome}!`);
   },
 

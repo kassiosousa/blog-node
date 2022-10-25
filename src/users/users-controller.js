@@ -1,8 +1,8 @@
-const Usuario = require('./usuarios-modelo');
-const { InvalidArgumentError, InternalServerError } = require('../erros');
+const User = require('./user-model');
+const { InvalidArgumentError, InternalServerError } = require('../errors');
 
 const jwt = require('jsonwebtoken');
-const blacklist = require('../../redis/manipula-blacklist');
+const blacklist = require('../../redis/config-blacklist');
 
 function criaTokenJWT(usuario) {
   const payload = {
@@ -15,12 +15,12 @@ function criaTokenJWT(usuario) {
 
 module.exports = {
   adiciona: async (req, res) => {
-    const { nome, email, senha } = req.body;
+    const { name, email, password } = req.body;
 
     try {
-      const usuario = new Usuario({nome, email});
+      const usuario = new Usuario({name, email});
 
-      await usuario.adicionaSenha(senha);
+      await usuario.adicionaSenha(password);
 
       await usuario.adiciona();
       

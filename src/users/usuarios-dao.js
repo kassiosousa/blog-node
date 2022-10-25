@@ -1,15 +1,15 @@
 const db = require('../../database');
-const { InternalServerError } = require('../erros');
+const { InternalServerError } = require('../errors');
 
 module.exports = {
   adiciona: usuario => {
     return new Promise((resolve, reject) => {
       db.run(
         `
-          INSERT INTO usuarios (
-            nome,
+          INSERT INTO users (
+            name,
             email,
-            senhaHash
+            pwdHash
           ) VALUES (?, ?, ?)
         `,
         [usuario.nome, usuario.email, usuario.senhaHash],
@@ -17,8 +17,7 @@ module.exports = {
           if (erro) {
             reject(new InternalServerError('Erro ao adicionar o usuário!'));
           }
-
-          return resolve();
+          return resolve("Usuário criado com sucesso!");
         }
       );
     });
@@ -29,8 +28,8 @@ module.exports = {
       db.get(
         `
           SELECT *
-          FROM usuarios
-          WHERE id = ?
+          FROM users
+          WHERE pk_user = ?
         `,
         [id],
         (erro, usuario) => {
@@ -49,7 +48,7 @@ module.exports = {
       db.get(
         `
           SELECT *
-          FROM usuarios
+          FROM users
           WHERE email = ?
         `,
         [email],
@@ -68,7 +67,7 @@ module.exports = {
     return new Promise((resolve, reject) => {
       db.all(
         `
-          SELECT * FROM usuarios
+          SELECT * FROM users
         `,
         (erro, usuarios) => {
           if (erro) {
@@ -84,8 +83,8 @@ module.exports = {
     return new Promise((resolve, reject) => {
       db.run(
         `
-          DELETE FROM usuarios
-          WHERE id = ?
+          DELETE FROM users
+          WHERE pk_user = ?
         `,
         [usuario.id],
         erro => {

@@ -1,8 +1,13 @@
 # Blog em Node.js
-> Um blog simples desenvolvido com Node.js para controle de usuários e gestão de publicações
+> A simple blog developed with Node.js: User control and blog posts
 
-Tabelas:
-> Usuarios
+Tables:
+> Users
 > Posts
+> Categories
+> Tags
 
+/modulo
+- index.js: Lista as rotas internas do módulo e seus devidos arquivos, dando nome a eles e definindo o arquivo correspondente (model, controller, routes, etc)
+- module-routes.js: Arquivo contendo lista de rotas e suas propriedades
 ## Kassio Sousa - Set/22

@@ -1,7 +1,7 @@
 {
-  "name": "blog-do-codigo",
+  "name": "blog-node",
   "version": "1.0.0",
-  "description": "Um blog simples em Node.js",
+  "description": "Blog Node.js",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",

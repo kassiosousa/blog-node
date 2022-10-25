@@ -1,6 +1,6 @@
 const usuariosDao = require('./usuarios-dao');
-const { InvalidArgumentError } = require('../erros');
-const validacoes = require('../validacoes-comuns');
+const { InvalidArgumentError } = require('../errors');
+const validacoes = require('../validations-commom');
 const bcrypt = require('bcrypt');
 
 class Usuario {

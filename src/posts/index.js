@@ -1,5 +1,5 @@
 module.exports = {
-  model: require('./posts-model'),
   routes: require('./posts-routes'),
+  model: require('./posts-model'),
   controller: require('./posts-controller')
 };

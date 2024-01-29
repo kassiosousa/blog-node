@@ -11,7 +11,7 @@ const POSTS_SCHEMA = `
     FOREIGN KEY(fk_tag) REFERENCES tags(id_tag),
     FOREIGN KEY(fk_category) REFERENCES categories(id_category)
   ) 
-  `;
+`;
 
 const USUARIOS_SCHEMA = `
   CREATE TABLE IF NOT EXISTS users (
@@ -20,20 +20,20 @@ const USUARIOS_SCHEMA = `
     email VARCHAR(255) NOT NULL UNIQUE,
     pwdHash VARCHAR(255) NOT NULL
   )
-  `;
+`;
   
 const TAGS_SCHEMA = `
-CREATE TABLE IF NOT EXISTS tags (
-  pk_tag INTEGER PRIMARY KEY AUTOINCREMENT,
-  name VARCHAR(40) NOT NULL
-)
+  CREATE TABLE IF NOT EXISTS tags (
+    pk_tag INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(40) NOT NULL
+  )
 `;
 
 const CATEGORIES_SCHEMA = `
-CREATE TABLE IF NOT EXISTS categories (
-  pk_category INTEGER PRIMARY KEY AUTOINCREMENT,
-  name VARCHAR(140) NOT NULL
-)
+  CREATE TABLE IF NOT EXISTS categories (
+    pk_category INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(140) NOT NULL
+  )
 `;
 
 db.serialize(() => {

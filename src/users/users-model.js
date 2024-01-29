@@ -1,9 +1,9 @@
-const usuariosDao = require('./usuarios-dao');
+const usuariosDao = require('./users-dao');
 const { InvalidArgumentError } = require('../errors');
 const validacoes = require('../validations-commom');
 const bcrypt = require('bcrypt');
 
-class Usuario {
+class User {
   constructor(usuario) {
     this.id = usuario.id;
     this.nome = usuario.nome;
@@ -66,4 +66,4 @@ class Usuario {
   }
 }
 
-module.exports = Usuario;
+module.exports = User;

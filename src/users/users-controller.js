@@ -1,4 +1,4 @@
-const User = require('./user-model');
+const User = require('./users-model');
 const { InvalidArgumentError, InternalServerError } = require('../errors');
 
 const jwt = require('jsonwebtoken');

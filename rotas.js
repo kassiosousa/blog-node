@@ -7,9 +7,9 @@ const functionsCommon = require('./src/functions-commom');
 module.exports = app => {
   //FuncoesComuns.calculaCustoIdeal(6, 18);
   app.get('/', (req, res) => {
-    res.send('Blog criado em Node.js<br>Kassio Sousa - 2022')
+    res.send('Blog criado em Node.js<br>Kassio Sousa - 2023')
   });
   
-  posts.rotas(app);
-  users.rotas(app);
+  posts.routes(app);
+  users.routes(app);
 };

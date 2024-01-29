@@ -1,4 +1,4 @@
-const Post = require('./posts-modelo');
+const Post = require('./posts-model');
 const { InvalidArgumentError, InternalServerError } = require('../errors');
 
 module.exports = {
